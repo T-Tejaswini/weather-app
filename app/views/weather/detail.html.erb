@@ -1,0 +1,40 @@
+<%= link_to 'Back To Search', '/' %>
+
+<h3>Forecast Results</h3>
+
+<% if @error %>
+  <div>
+    <strong><%= @error %></strong>
+  </div>
+<% end %>
+
+<% if @cache_info %>
+  <% if @cache_info[:is_cached] %>
+    <div>
+      <strong>Retrieved Cached results. Cached at <%= @cache_info[:cached_at] %></strong>
+    </div>
+  <% else %>
+    <div>
+      <strong>Caching is not enabled. <%= Rails.env == 'development' ? 'Run rails dev:cache to enable caching' : '' %></strong>
+    </div>
+  <% end %>
+<% end %>
+<br/>
+
+<% if @data.present? %>
+  <% @data.each do |record| %>
+    <div>
+      <strong>Time: (<%= record[:date_time] %>)</strong>
+
+      <% info = record[:info] %>
+
+      <div class="flex">
+        Temperature: <%= info['temp'] %><br/>
+        Feels Like: <%= info['feels_like'] %><br/>
+        Min Temperature: <%= info['temp_min'] %><br/>
+        Max Temperature: <%= info['temp_max'] %>
+      </div>
+    </div>
+    <br/>
+  <% end %>
+<% end %>

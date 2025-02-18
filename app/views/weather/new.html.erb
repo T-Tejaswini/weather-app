@@ -1,0 +1,15 @@
+<h3>Weather Information</h3>
+
+
+<%= form_tag detail_weather_index_path, method: :get do %>
+  <div>
+    <%=label_tag 'Enter Address:' %>
+    <%= text_field_tag :address %>
+  </div>
+
+  <br />
+
+  <div>
+    <%= submit_tag 'Get Info' %>
+  </div>
+<% end %>

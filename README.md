@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application uses openweathermap API and returns weather information for given address.
 
-Things you may want to cover:
+### Caching
 
-* Ruby version
+This application caches data for 30 mins. In development env run rails dev:cache to enable caching.
 
-* System dependencies
+### Additional Information
 
-* Configuration
+This application uses `3.2.5` ruby version.
 
-* Database creation
+Run below commands to get started.
 
-* Database initialization
+```
 
-* How to run the test suite
+git clone https://github.com/T-Tejaswini/weather-app.git
+cd weather_app
+bundle install
+bundle exec rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+```
 
-* Deployment instructions
+You can access development server at `http://localhost:3000`
 
-* ...
+### Screenshots
+
+Page to request weather information.
+
+<img width="570" alt="Screenshot 2025-02-17 at 8 48 53 PM" src="https://github.com/user-attachments/assets/ac19a420-3842-4cd8-a654-71e547e1c25e" />
+
+Results page.
+
+
+<img width="850" alt="Screenshot 2025-02-17 at 8 49 06 PM" src="https://github.com/user-attachments/assets/5888d4e9-411e-4869-94d8-c22a76558873" />
+
