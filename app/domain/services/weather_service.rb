@@ -21,7 +21,7 @@ module Services
       @units = params.fetch(:units, 'imperial')
     end
 
-    # returns weather information for given address.
+    # Makes an API call to fetch weather info
     #
     # caches data for 30 mins(default) by zipcode
     def call
